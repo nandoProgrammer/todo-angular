@@ -10,10 +10,11 @@
 
 </ul>
 
-<form>
+<form [formGroup]="form">
    <fieldset>
       <label>Tarefa</label>
-      <input type="text">
+      <input type="text" placeholder="Tarefa" maxlength="60" formControlName="title">
+      <small *ngIf="form.title.value">Este campo deve conter entre 3 e 60 caracteres</small>
       <button>Salvar</button>
    </fieldset>
 </form>
