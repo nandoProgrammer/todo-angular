@@ -24,7 +24,18 @@ export class AppComponent {
         Validators.required,
         ])]
       });
-    this.todos.push(new Todo(1, 'ok', false));
+
+  }
+
+  add(){
+    const id = this.todos.length + 1;
+    const title = this.form.controls['title'].value;
+    this.todos.push(new Todo(id, title, false));
+    this.clear();
+  }
+
+  clear(){
+    this.form.reset();
   }
 
   alteraTexto(){
