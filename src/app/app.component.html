@@ -1,11 +1,11 @@
-<h1>{{ Title }}</h1>
+
+<h1 class="title">Minhas Tarefas</h1>
 <p><small *ngIf="todos.length === 0">Nenhuma Tarefa Hoje</small></p>
-<button (click)="alteraTexto()">alterar</button>
 <ul>
   <li *ngFor="let todo of todos">
-     {{todo.todo}} -
+     {{todo.todo}}
      <button *ngIf="!todo.done" (click)="markAsDone(todo)">Concluir</button>
-     <button *ngIf="todo.done" (click)="markAsUndone(todo)">Refazer</button> |
+     <button *ngIf="todo.done" (click)="markAsUndone(todo)">Refazer</button>
      <button (click)="remove(todo)">Remover</button>
   </li>
 
